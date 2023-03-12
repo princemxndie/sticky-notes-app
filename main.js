@@ -6,7 +6,7 @@ getNotes().forEach(note => {
   notesContainer.insertBefore(noteElement, addNoteBtn);
 });
 
-addNoteBtn.addEventListener("click", () => addNote());
+addNoteBtn.addEventListener("click", addNote);
 
 function getNotes() {
   return JSON.parse(localStorage.getItem("stickynotes-app") || "[]");
@@ -37,7 +37,7 @@ function createNoteElement(id, content) {
   
   element.classList.add("note");
   element.value = content;
-  element.placeholder = "Add a note...";
+  element.placeholder = "Take a note...";
   //element.innerHTML = `<button style="background:red;">Delete</button>`;
   //element.insertAdjacentHTML("beforeend", delBtn);
   
